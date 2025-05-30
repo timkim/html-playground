@@ -8,6 +8,22 @@ function createTag(name, attrs) {
   return el;
 }
 
+
+function bioTemplate(name, bio) {
+  return `
+<div>
+  <h1>${name}</h1>
+  <p>${bio}</h1>
+</div>
+`;
+}
+
+const people = [
+  {name: 'Joe', bio: 'Lives in San Jose'},
+  {name: 'Mindy', bio: 'Likes dogs'},
+  {name: 'Sam', bio: 'Only eats pizza'}
+];
+
 window.addEventListener("load", (event) => {
   console.log("page is fully loaded");
   const main = document.querySelector('div#main');
@@ -23,5 +39,6 @@ window.addEventListener("load", (event) => {
   main.append(divContainer);
 
   const listContainer = createTag('li');
+  divContainer.appendChild(listContainer);
 
 });
